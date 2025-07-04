@@ -1,0 +1,26 @@
+﻿@media (max-width: 991.98px) {
+    .dev-row {
+        flex-direction: column !important;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .dev-team {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 20px 8px;
+    }
+
+    .contact-info {
+        border-right: none;
+        border-bottom: 1.5px solid #e0e0e0;
+    }
+}

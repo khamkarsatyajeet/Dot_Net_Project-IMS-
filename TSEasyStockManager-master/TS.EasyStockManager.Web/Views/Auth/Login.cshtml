@@ -1,0 +1,98 @@
+﻿@model TS.EasyStockManager.Model.ViewModel.Auth.LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Easy Stock Manager | Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="~/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/plugins/toastr/toastr.min.css">
+    <link href="~/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/dist/css/adminlte.min.css" rel="stylesheet" />
+    <style>
+        
+        body {
+            padding-top: 70px;
+            min-height: 100vh;
+            background: url('@Url.Content("~/images/login_background1.jpg")') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+        }
+    
+
+
+        .login-box {
+            width: 360px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.95); /* translucent white for contrast */
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(4px);
+        }
+
+        .login-card-body {
+            backdrop-filter: blur(2px);
+        }
+
+        ::placeholder {
+            color: #999;
+        }
+    </style>
+</head>
+<body class="hold-transition">
+    <!-- Fixed Navbar -->
+    <nav class="navbar navbar-expand navbar-light bg-white border-bottom fixed-top shadow-sm">
+        <a class="navbar-brand font-weight-bold" href="/">Easy Stock Manager</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/Auth/AboutUs">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Auth/ContactUs">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Centered Login Form -->
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="login-box">
+            <div class="card shadow">
+                <div class="card-body login-card-body p-4">
+                    <div class="text-center mb-3">
+                        <span class="h4 font-weight-bold" style="color:#007bff;">Easy Stock Manager</span>
+                        <h4 class="mt-2 mb-4" style="font-weight:600;">Login</h4>
+                    </div>
+                    <form asp-action="Login" asp-antiforgery="true" id="frmCreate">
+                        <div class="form-group">
+                            <label asp-for="Email" class="font-weight-500"></label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="font-weight-500"></label>
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/plugins/toastr/toastr.min.js"></script>
+    <script src="~/dist/js/adminlte.min.js"></script>
+    <partial name="~/Views/Shared/_FormScriptsPartial.cshtml" />
+</body>
+</html>
